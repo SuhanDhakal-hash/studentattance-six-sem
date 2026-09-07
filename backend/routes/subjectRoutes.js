@@ -3,10 +3,7 @@ const { pool } = require("../config/db");
 
 const router = express.Router();
 
-// ========================================
-// GET ALL SUBJECTS
-// GET /api/subjects
-// ========================================
+
 router.get("/", async (req, res) => {
     try {
         const [rows] = await pool.query(`
@@ -30,10 +27,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// ========================================
-// GET SUBJECT BY ID
-// GET /api/subjects/:id
-// ========================================
+
 router.get("/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -69,10 +63,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-// ========================================
-// CREATE SUBJECT
-// POST /api/subjects
-// ========================================
+
 router.post("/", async (req, res) => {
     try {
         const { name, code } = req.body;
@@ -120,10 +111,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// ========================================
-// UPDATE SUBJECT
-// PUT /api/subjects/:id
-// ========================================
+
 router.put("/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -184,10 +172,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-// ========================================
-// DELETE SUBJECT
-// DELETE /api/subjects/:id
-// ========================================
+
 router.delete("/:id", async (req, res) => {
     try {
         const { id } = req.params;

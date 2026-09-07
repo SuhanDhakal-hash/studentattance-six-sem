@@ -3,10 +3,7 @@ const { pool } = require("../config/db");
 
 const router = express.Router();
 
-// ========================================
-// GET ALL DEPARTMENTS
-// GET /api/departments
-// ========================================
+
 router.get("/", async (req, res) => {
     try {
         const [rows] = await pool.query(`
@@ -30,10 +27,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// ========================================
-// GET DEPARTMENT BY ID
-// GET /api/departments/:id
-// ========================================
+
 router.get("/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -69,10 +63,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-// ========================================
-// CREATE DEPARTMENT
-// POST /api/departments
-// ========================================
+
 router.post("/", async (req, res) => {
     try {
         const { name, code } = req.body;
@@ -120,10 +111,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// ========================================
-// UPDATE DEPARTMENT
-// PUT /api/departments/:id
-// ========================================
+
 router.put("/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -184,10 +172,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-// ========================================
-// DELETE DEPARTMENT
-// DELETE /api/departments/:id
-// ========================================
+
 router.delete("/:id", async (req, res) => {
     try {
         const { id } = req.params;
